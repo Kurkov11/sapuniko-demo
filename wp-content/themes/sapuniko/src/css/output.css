@@ -3714,7 +3714,7 @@ ul.page-numbers {
 }
 
 .sapuniko-gallery-img-hover
-  .sapuniko-better-slide-mobile-hover
+  .sapuniko-better-slider-slide-mobile-hover
   .sapuniko-slide
   img {
   --tw-translate-y: -10px;
@@ -3726,7 +3726,7 @@ ul.page-numbers {
 
 @media (min-width: 960px) {
   .sapuniko-gallery-img-hover
-    .sapuniko-better-slide-mobile-hover
+    .sapuniko-better-slider-slide-mobile-hover
     .sapuniko-slide
     img {
     --tw-translate-y: 0px;

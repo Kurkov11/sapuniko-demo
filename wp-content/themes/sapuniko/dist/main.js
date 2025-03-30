@@ -3112,11 +3112,15 @@
                         "px)"
                       )),
                       Array.from(this.slider.children).forEach(function (A) {
-                        A.classList.remove("better-slider-slide-mobile-hover");
+                        A.classList.remove(
+                          "sapuniko-better-slider-slide-mobile-hover"
+                        );
                       }),
                       this.slider.children[
                         this.state.globalSlidesIndex
-                      ].classList.add("better-slider-slide-mobile-hover"),
+                      ].classList.add(
+                        "sapuniko-better-slider-slide-mobile-hover"
+                      ),
                       console.log(
                         "adding better-slider-slide-mobile-hover to ",
                         this.slider.children[this.state.globalSlidesIndex]
