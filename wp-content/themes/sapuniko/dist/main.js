@@ -3208,6 +3208,10 @@
                       ].classList.add(
                         "sapuniko-better-slider-slide-mobile-hover"
                       ),
+                      console.log(
+                        "adding sapuniko-better-slider-slide-mobile-hover to ",
+                        this.slider.children[this.state.globalSlidesIndex]
+                      ),
                       this.scrollContainer.classList.remove(
                         "sapuniko-grabbing"
                       );
