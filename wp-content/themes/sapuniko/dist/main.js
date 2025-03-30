@@ -3043,13 +3043,15 @@
                 {
                   key: "canDrag",
                   get: function () {
-                    console.log(
-                      "this.dragging: ",
-                      this.dragging,
-                      "this.repositioning: ",
-                      this.repositioning
+                    return (
+                      console.log(
+                        "this.dragging: ",
+                        this.dragging,
+                        "this.repositioning: ",
+                        this.repositioning
+                      ),
+                      this.dragging && !this.repositioning
                     );
-                    return this.dragging && !this.repositioning;
                   },
                 },
               ]
@@ -3090,32 +3092,24 @@
                 {
                   key: "init",
                   value: function () {
-                    var A = this;
                     this.addDummyContainers(),
-                      document.addEventListener(
-                        "DOMContentLoaded",
-                        function () {
-                          A.addListeners(),
-                            (A.state.slideWidth =
-                              A.slider.children[0].offsetWidth),
-                            (A.state.swipePosition =
-                              -A.state.globalSlidesIndex * A.state.slideWidth),
-                            (A.slider.style.transform = "translateX(".concat(
-                              A.state.swipePosition,
-                              "px)"
-                            ));
-                        }
-                      );
+                      console.log("adding event listeners to ", this),
+                      this.addListeners(),
+                      (this.state.slideWidth =
+                        this.slider.children[0].offsetWidth),
+                      (this.state.swipePosition =
+                        -this.state.globalSlidesIndex * this.state.slideWidth),
+                      (this.slider.style.transform = "translateX(".concat(
+                        this.state.swipePosition,
+                        "px)"
+                      )),
+                      console.log("init: ", this.state.repositioning);
                   },
                 },
                 {
                   key: "setPosition",
                   value: function (A) {
-                    (this.state.repositioning = !1),
-                      console.log(
-                        "setPosition, repositioning, ",
-                        this.state.repositioning
-                      ),
+                    (this.state.repositioning = !0),
                       (this.state.swipePosition = A),
                       (this.slider.style.transform = "translateX(".concat(
                         A,
@@ -3183,16 +3177,13 @@
                   value: function (A) {
                     console.log(
                       "handleDragging, e.pointerType: ",
-                      A.pointerType,
-                      "canProceed? ",
-                      this.state.canDrag &&
-                        !this.state.pointerMovementManager.movesVertically,
-                      "canDrag? ",
-                      "movesVertically? ",
-                      this.state.pointerMovementManager.movesVertically,
-                      "canDrag? ",
-                      this.state.canDrag
+                      A.pointerType
                     ),
+                      console.log(
+                        "canProceed? ",
+                        !this.state.canDrag ||
+                          this.state.pointerMovementManager.movesVertically
+                      ),
                       this.state.canDrag &&
                         !this.state.pointerMovementManager.movesVertically &&
                         (this.scrollContainer.classList.add(
@@ -3207,7 +3198,6 @@
                   key: "handleStopDragging",
                   value: function (A) {
                     (this.state.dragging = !1),
-                      console.log("handleStopDragging"),
                       this.showValidSlide(),
                       this.scrollContainer.classList.remove(
                         "sapuniko-grabbing"
@@ -3240,13 +3230,12 @@
                   key: "addListeners",
                   value: function () {
                     var A = this;
-                    console.log("DOMCONTENTLOADED"),
-                      this.leftArrow &&
-                        this.leftArrow.forEach(function (B) {
-                          B.addEventListener("click", function (B) {
-                            return A.handleLeftArrowClick(B);
-                          });
-                        }),
+                    this.leftArrow &&
+                      this.leftArrow.forEach(function (B) {
+                        B.addEventListener("click", function (B) {
+                          return A.handleLeftArrowClick(B);
+                        });
+                      }),
                       this.rightArrow &&
                         this.rightArrow.forEach(function (B) {
                           B.addEventListener("click", function (B) {
@@ -3306,27 +3295,25 @@
                         { passive: !1 }
                       ),
                       console.log(
-                        "adding listener transitionend to ",
+                        "attempting add transition end listener on ",
                         this.slider
                       ),
                       this.slider.addEventListener(
                         "transitionend",
                         function (B) {
-                          A.handleTransitionEnd(B);
+                          console.log("add transition end listener"),
+                            A.handleTransitionEnd(B);
                         }
                       ),
                       this.scrollContainer.addEventListener(
                         "pointerup",
                         function (B) {
-                          console.log("pointerup");
-
                           return A.handleStopDragging(B);
                         }
                       ),
                       this.scrollContainer.addEventListener(
                         "pointerleave",
                         function (B) {
-                          console.log("pointerleave");
                           A.state.dragging && A.handleStopDragging(B);
                         }
                       ),
@@ -3885,21 +3872,25 @@
                       this.btn.classList.toggle("expanded"),
                         this.toggled
                           ? ((this.toggled = !1),
-                            gsap.timeline().to(this.textContainer, {
-                              opacity: 0,
-                              duration: 0.5,
-                              y: "-30px",
-                              height: 0,
-                            }),
+                            gsap
+                              .timeline()
+                              .to(this.textContainer, {
+                                opacity: 0,
+                                duration: 0.5,
+                                y: "-30px",
+                                height: 0,
+                              }),
                             gsap
                               .timeline()
                               .to(this.plusLines[1], { rotate: 90 }))
-                          : (gsap.timeline().to(this.textContainer, {
-                              opacity: 1,
-                              duration: 0.5,
-                              y: 0,
-                              height: "".concat(this.paraHeight, "px"),
-                            }),
+                          : (gsap
+                              .timeline()
+                              .to(this.textContainer, {
+                                opacity: 1,
+                                duration: 0.5,
+                                y: 0,
+                                height: "".concat(this.paraHeight, "px"),
+                              }),
                             gsap
                               .timeline()
                               .to(this.plusLines[1], { rotate: 0 }),
