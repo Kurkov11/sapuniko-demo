@@ -2196,19 +2196,19 @@ video {
 @font-face {
   font-family: "Akshar";
 
-  src: url("../fonts/Akshar.ttf") format("truetype");
+  src: url("/wp-content/themes/sapuniko/src/fonts/Akshar.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Alumni Sans";
 
-  src: url("../fonts/AlumniSans.ttf") format("truetype");
+  src: url("/wp-content/themes/sapuniko/src/fonts/AlumniSans.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Abel";
 
-  src: url("../fonts/Abel.ttf") format("truetype");
+  src: url("/wp-content/themes/sapuniko/src/fonts/Abel.ttf") format("truetype");
 }
 
 :root {
