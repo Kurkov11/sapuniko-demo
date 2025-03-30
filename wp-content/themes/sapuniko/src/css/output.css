@@ -633,12 +633,12 @@ video {
   bottom: 0px;
 }
 
-.bottom-\[-100px\] {
-  bottom: -100px;
-}
-
 .bottom-\[-10px\] {
   bottom: -10px;
+}
+
+.bottom-\[-140px\] {
+  bottom: -140px;
 }
 
 .bottom-\[-220px\] {
@@ -695,10 +695,6 @@ video {
 
 .top-\[-50px\] {
   top: -50px;
-}
-
-.bottom-\[-140px\] {
-  bottom: -140px;
 }
 
 .-z-10 {
@@ -2196,22 +2192,19 @@ video {
 @font-face {
   font-family: "Akshar";
 
-  src: url("https://kurkov11.github.io/sapuniko-demo/wp-content/themes/sapuniko/src/fonts/Akshar.ttf")
-    format("truetype");
+  src: url("../fonts/Akshar.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Alumni Sans";
 
-  src: url("https://kurkov11.github.io/sapuniko-demo/wp-content/themes/sapuniko/src/fonts/AlumniSans.ttf")
-    format("truetype");
+  src: url("../fonts/AlumniSans.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Abel";
 
-  src: url("https://kurkov11.github.io/sapuniko-demo/wp-content/themes/sapuniko/src/fonts/Abel.ttf")
-    format("truetype");
+  src: url("../fonts/Abel.ttf") format("truetype");
 }
 
 :root {
@@ -2575,15 +2568,17 @@ a:visited {
   transition-duration: 0.3s;
 }
 
-.sapuniko-gallery-img-hover
-  .sapuniko-slide:hover
-  .sapuniko-portfolio-preview-label {
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
-    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  opacity: 1;
+@media (min-width: 960px) {
+  .sapuniko-gallery-img-hover
+    .sapuniko-slide:hover
+    .sapuniko-portfolio-preview-label {
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+      rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+      scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    opacity: 1;
+  }
 }
 
 .sapuniko-service-reveal {
@@ -3689,6 +3684,26 @@ ul.page-numbers {
   color: rgb(217 217 217 / var(--tw-text-opacity, 1));
 }
 
+.sapuniko-better-slide-mobile-hover .sapuniko-portfolio-preview-label {
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  opacity: 1;
+}
+
+@media (min-width: 960px) {
+  .sapuniko-better-slide-mobile-hover .sapuniko-portfolio-preview-label {
+    --tw-scale-x: 0;
+    --tw-scale-y: 0;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+      rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+      scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    opacity: 0;
+  }
+}
+
 .before\:absolute::before {
   content: var(--tw-content);
   position: absolute;
@@ -4257,10 +4272,6 @@ ul.page-numbers {
 
   .desktop\:right-\[120px\] {
     right: 120px;
-  }
-
-  .desktop\:right-\[-140px\] {
-    right: -140px;
   }
 
   .desktop\:mx-\[275px\] {
