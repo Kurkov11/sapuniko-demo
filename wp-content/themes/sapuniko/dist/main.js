@@ -3381,6 +3381,10 @@
                         )),
                         (this.state.isOnDummy = !1)),
                       (this.state.repositioning = !1),
+                      console.log(
+                        "handleTransitionEnd, repositioning: ",
+                        this.state.repositioning
+                      ),
                       setTimeout(function () {
                         return B.enableInteraction();
                       }, 0));
