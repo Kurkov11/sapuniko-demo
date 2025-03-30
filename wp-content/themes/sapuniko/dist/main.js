@@ -3318,12 +3318,15 @@
                       this.scrollContainer.addEventListener(
                         "pointerup",
                         function (B) {
+                          console.log("pointerup");
+
                           return A.handleStopDragging(B);
                         }
                       ),
                       this.scrollContainer.addEventListener(
                         "pointerleave",
                         function (B) {
+                          console.log("pointerleave");
                           A.state.dragging && A.handleStopDragging(B);
                         }
                       ),
