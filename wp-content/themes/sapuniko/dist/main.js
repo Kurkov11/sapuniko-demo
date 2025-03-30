@@ -3043,6 +3043,12 @@
                 {
                   key: "canDrag",
                   get: function () {
+                    console.log(
+                      "this.dragging: ",
+                      this.dragging,
+                      "this.repositioning: ",
+                      this.repositioning
+                    );
                     return this.dragging && !this.repositioning;
                   },
                 },
