@@ -3100,16 +3100,16 @@
                   key: "setPosition",
                   value: function (A) {
                     (this.state.repositioning = !0),
-                      (this.state.swipePosition = A),
-                      (this.slider.style.transform = "translateX(".concat(
-                        A,
-                        "px)"
-                      )),
                       console.log(
                         "setPosition",
                         "repositioning: ",
                         this.state.repositioning
-                      );
+                      ),
+                      (this.state.swipePosition = A),
+                      (this.slider.style.transform = "translateX(".concat(
+                        A,
+                        "px)"
+                      ));
                   },
                 },
                 {
@@ -3191,7 +3191,8 @@
                 {
                   key: "showValidSlide",
                   value: function () {
-                    this.enableTransition(),
+                    console.log("showValidSlide"),
+                      this.enableTransition(),
                       this.shouldShowNext()
                         ? (this.state.setNextSlide(),
                           this.setPosition(
@@ -3318,6 +3319,9 @@
                       (this.disableInteraction(),
                       this.enableTransition(),
                       this.state.setPreviousSlide(),
+                      console.log(
+                        "setPosition is called from handleLeftArrowClick"
+                      ),
                       this.setPosition(
                         -this.state.slideWidth * this.state.globalSlidesIndex
                       ));
@@ -3330,6 +3334,9 @@
                       (this.disableInteraction(),
                       this.enableTransition(),
                       this.state.setNextSlide(),
+                      console.log(
+                        "setPosition is called from handleRightArrowClick"
+                      ),
                       this.setPosition(
                         -this.state.slideWidth * this.state.globalSlidesIndex
                       ));
