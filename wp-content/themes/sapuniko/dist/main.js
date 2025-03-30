@@ -3043,15 +3043,7 @@
                 {
                   key: "canDrag",
                   get: function () {
-                    return (
-                      console.log(
-                        "this.dragging: ",
-                        this.dragging,
-                        "this.repositioning: ",
-                        this.repositioning
-                      ),
-                      this.dragging && !this.repositioning
-                    );
+                    return this.dragging && !this.repositioning;
                   },
                 },
               ]
@@ -3106,15 +3098,29 @@
                 },
                 {
                   key: "setPosition",
-                  value: function (A) {
-                    console.log("setPosition"),
-                      (this.state.repositioning = !0),
+                  value: (function (A) {
+                    function B(B) {
+                      return A.apply(this, arguments);
+                    }
+                    return (
+                      (B.toString = function () {
+                        return A.toString();
+                      }),
+                      B
+                    );
+                  })(function (A) {
+                    (this.state.repositioning = !0),
                       (this.state.swipePosition = A),
                       (this.slider.style.transform = "translateX(".concat(
                         A,
                         "px)"
-                      ));
-                  },
+                      )),
+                      console.log(
+                        setPosition,
+                        "repositioning: ",
+                        this.state.repositioning
+                      );
+                  }),
                 },
                 {
                   key: "addDummyContainers",
@@ -3174,23 +3180,12 @@
                 {
                   key: "handleDragging",
                   value: function (A) {
-                    console.log(
-                      "handleDragging, e.pointerType: ",
-                      A.pointerType
-                    ),
-                      console.log(
-                        "canProceed? ",
-                        !this.state.canDrag ||
-                          this.state.pointerMovementManager.movesVertically
-                      ),
-                      this.state.canDrag &&
-                        !this.state.pointerMovementManager.movesVertically &&
-                        (this.scrollContainer.classList.add(
-                          "sapuniko-grabbing"
-                        ),
-                        this.disableTransition(),
-                        this.disableInteraction(),
-                        this.dragSliderBy(A.movementX / 2));
+                    this.state.canDrag &&
+                      !this.state.pointerMovementManager.movesVertically &&
+                      (this.scrollContainer.classList.add("sapuniko-grabbing"),
+                      this.disableTransition(),
+                      this.disableInteraction(),
+                      this.dragSliderBy(A.movementX / 2));
                   },
                 },
                 {
@@ -3229,13 +3224,12 @@
                   key: "addListeners",
                   value: function () {
                     var A = this;
-                    console.log("AddListeners"),
-                      this.leftArrow &&
-                        this.leftArrow.forEach(function (B) {
-                          B.addEventListener("click", function (B) {
-                            return A.handleLeftArrowClick(B);
-                          });
-                        }),
+                    this.leftArrow &&
+                      this.leftArrow.forEach(function (B) {
+                        B.addEventListener("click", function (B) {
+                          return A.handleLeftArrowClick(B);
+                        });
+                      }),
                       this.rightArrow &&
                         this.rightArrow.forEach(function (B) {
                           B.addEventListener("click", function (B) {
@@ -3294,15 +3288,10 @@
                         },
                         { passive: !1 }
                       ),
-                      console.log(
-                        "attempting add transition end listener on ",
-                        this.slider
-                      ),
                       this.slider.addEventListener(
                         "transitionend",
                         function (B) {
-                          console.log("add transition end listener"),
-                            A.handleTransitionEnd(B);
+                          A.handleTransitionEnd(B);
                         }
                       ),
                       this.scrollContainer.addEventListener(
@@ -3360,33 +3349,35 @@
                   key: "handleTransitionEnd",
                   value: function (A) {
                     var B = this;
-                    "transform" === A.propertyName &&
-                      A.target === this.slider &&
-                      (console.log(
-                        "transitionEnd:, pos:  ",
-                        this.state.swipePosition,
-                        this.state.globalSlidesIndex
-                      ),
-                      this.state.isOnDummy &&
-                        (this.slider.classList.add("disable-transition"),
-                        (this.state.mainSlidesIndex = 0),
-                        (this.state.globalSlidesIndex = this.mainSlidesAmount),
-                        (this.state.swipePosition =
-                          -this.state.globalSlidesIndex *
-                          this.state.slideWidth),
-                        (this.slider.style.transform = "translateX(".concat(
-                          this.state.swipePosition,
-                          "px)"
-                        )),
-                        (this.state.isOnDummy = !1)),
-                      (this.state.repositioning = !1),
-                      console.log(
-                        "handleTransitionEnd, repositioning: ",
-                        this.state.repositioning
-                      ),
-                      setTimeout(function () {
-                        return B.enableInteraction();
-                      }, 0));
+                    console.log(
+                      "handleTransitionEnd",
+                      A.propertyName,
+                      " target: ",
+                      A.target
+                    ),
+                      "transform" === A.propertyName &&
+                        A.target === this.slider &&
+                        (this.state.isOnDummy &&
+                          (this.slider.classList.add("disable-transition"),
+                          (this.state.mainSlidesIndex = 0),
+                          (this.state.globalSlidesIndex =
+                            this.mainSlidesAmount),
+                          (this.state.swipePosition =
+                            -this.state.globalSlidesIndex *
+                            this.state.slideWidth),
+                          (this.slider.style.transform = "translateX(".concat(
+                            this.state.swipePosition,
+                            "px)"
+                          )),
+                          (this.state.isOnDummy = !1)),
+                        (this.state.repositioning = !1),
+                        console.log(
+                          "repositioning: ",
+                          this.state.repositioning
+                        ),
+                        setTimeout(function () {
+                          return B.enableInteraction();
+                        }, 0));
                   },
                 },
                 {
@@ -3872,21 +3863,25 @@
                       this.btn.classList.toggle("expanded"),
                         this.toggled
                           ? ((this.toggled = !1),
-                            gsap.timeline().to(this.textContainer, {
-                              opacity: 0,
-                              duration: 0.5,
-                              y: "-30px",
-                              height: 0,
-                            }),
+                            gsap
+                              .timeline()
+                              .to(this.textContainer, {
+                                opacity: 0,
+                                duration: 0.5,
+                                y: "-30px",
+                                height: 0,
+                              }),
                             gsap
                               .timeline()
                               .to(this.plusLines[1], { rotate: 90 }))
-                          : (gsap.timeline().to(this.textContainer, {
-                              opacity: 1,
-                              duration: 0.5,
-                              y: 0,
-                              height: "".concat(this.paraHeight, "px"),
-                            }),
+                          : (gsap
+                              .timeline()
+                              .to(this.textContainer, {
+                                opacity: 1,
+                                duration: 0.5,
+                                y: 0,
+                                height: "".concat(this.paraHeight, "px"),
+                              }),
                             gsap
                               .timeline()
                               .to(this.plusLines[1], { rotate: 0 }),
