@@ -3205,7 +3205,10 @@
                             -this.state.slideWidth *
                               this.state.globalSlidesIndex
                           ))
-                        : this.setPosition(
+                        : !this.state.swipePosition ===
+                            -this.state.slideWidth *
+                              this.state.globalSlidesIndex &&
+                          this.setPosition(
                             -this.state.slideWidth *
                               this.state.globalSlidesIndex
                           );
@@ -3273,9 +3276,8 @@
                       ),
                       this.scrollContainer.addEventListener(
                         "touchmove",
-                        function (B) {
-                          A.state.pointerMovementManager.movesVertically ||
-                            B.preventDefault();
+                        function (A) {
+                          A.preventDefault();
                         },
                         { passive: !1 }
                       ),
