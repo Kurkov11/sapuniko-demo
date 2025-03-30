@@ -1,6 +1,6 @@
 /*! For license information please see main.js.LICENSE.txt */
 (() => {
-  let setPosCount = 0;
+    let setPosCount = 0;
   var A = {
       "./node_modules/@georgedoescode/spline/spline.js": (A, B, n) => {
         "use strict";
@@ -3101,14 +3101,15 @@
                   key: "setPosition",
                   value: function (A) {
                     setPosCount++;
-                    (document.querySelector('#setPosCount').textContent = `this will show the count of setPosition calls: ${setPosCount}`),
-                    (this.state.repositioning = !0),
+                    document.querySelector('#setPosCount').textContent = `this will show the count of setPosition calls: ${setPosCount}`
+                    this.state.swipePosition !== A &&
+                      ((this.state.repositioning = !0),
                       console.log(
                         "setPosition",
                         "repositioning: ",
                         this.state.repositioning
                       ),
-                      (this.state.swipePosition = A),
+                      (this.state.swipePosition = A)),
                       (this.slider.style.transform = "translateX(".concat(
                         A,
                         "px)"
@@ -3208,10 +3209,7 @@
                             -this.state.slideWidth *
                               this.state.globalSlidesIndex
                           ))
-                        : !this.state.swipePosition ===
-                            -this.state.slideWidth *
-                              this.state.globalSlidesIndex &&
-                          this.setPosition(
+                        : this.setPosition(
                             -this.state.slideWidth *
                               this.state.globalSlidesIndex
                           );
@@ -3279,8 +3277,9 @@
                       ),
                       this.scrollContainer.addEventListener(
                         "touchmove",
-                        function (A) {
-                          A.preventDefault();
+                        function (B) {
+                          A.state.pointerMovementManager.movesVertically ||
+                            B.preventDefault();
                         },
                         { passive: !1 }
                       ),
