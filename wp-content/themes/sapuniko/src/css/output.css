@@ -3684,7 +3684,7 @@ ul.page-numbers {
   color: rgb(217 217 217 / var(--tw-text-opacity, 1));
 }
 
-.better-slide-mobile-hover .sapuniko-portfolio-preview-label {
+.better-slider-slide-mobile-hover .sapuniko-portfolio-preview-label {
   --tw-scale-x: 1;
   --tw-scale-y: 1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y))
@@ -3694,7 +3694,7 @@ ul.page-numbers {
 }
 
 @media (min-width: 960px) {
-  .better-slide-mobile-hover .sapuniko-portfolio-preview-label {
+  .better-slider-slide-mobile-hover .sapuniko-portfolio-preview-label {
     --tw-scale-x: 0;
     --tw-scale-y: 0;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y))
