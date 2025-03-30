@@ -3690,7 +3690,7 @@ ul.page-numbers {
 }
 
 .sapuniko-gallery-img-hover
-  .sapuniko-better-slide-mobile-hover
+  .sapuniko-better-slider-slide-mobile-hover
   .sapuniko-portfolio-preview-label {
   --tw-scale-x: 1;
   --tw-scale-y: 1;
@@ -3702,7 +3702,7 @@ ul.page-numbers {
 
 @media (min-width: 960px) {
   .sapuniko-gallery-img-hover
-    .sapuniko-better-slide-mobile-hover
+    .sapuniko-better-slider-slide-mobile-hover
     .sapuniko-portfolio-preview-label {
     --tw-scale-x: 0;
     --tw-scale-y: 0;
