@@ -1,5 +1,6 @@
 /*! For license information please see main.js.LICENSE.txt */
 (() => {
+  let setPosCount = 0;
   var A = {
       "./node_modules/@georgedoescode/spline/spline.js": (A, B, n) => {
         "use strict";
@@ -3099,6 +3100,8 @@
                 {
                   key: "setPosition",
                   value: function (A) {
+                    setPosCount++;
+                    (document.querySelector('#setPosCount').textContent = `this will show the count of setPosition calls: ${setPosCount}`),
                     (this.state.repositioning = !0),
                       console.log(
                         "setPosition",
@@ -3862,25 +3865,21 @@
                       this.btn.classList.toggle("expanded"),
                         this.toggled
                           ? ((this.toggled = !1),
-                            gsap
-                              .timeline()
-                              .to(this.textContainer, {
-                                opacity: 0,
-                                duration: 0.5,
-                                y: "-30px",
-                                height: 0,
-                              }),
+                            gsap.timeline().to(this.textContainer, {
+                              opacity: 0,
+                              duration: 0.5,
+                              y: "-30px",
+                              height: 0,
+                            }),
                             gsap
                               .timeline()
                               .to(this.plusLines[1], { rotate: 90 }))
-                          : (gsap
-                              .timeline()
-                              .to(this.textContainer, {
-                                opacity: 1,
-                                duration: 0.5,
-                                y: 0,
-                                height: "".concat(this.paraHeight, "px"),
-                              }),
+                          : (gsap.timeline().to(this.textContainer, {
+                              opacity: 1,
+                              duration: 0.5,
+                              y: 0,
+                              height: "".concat(this.paraHeight, "px"),
+                            }),
                             gsap
                               .timeline()
                               .to(this.plusLines[1], { rotate: 0 }),
