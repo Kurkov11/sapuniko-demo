@@ -3111,7 +3111,7 @@
                 {
                   key: "setPosition",
                   value: function (A) {
-                    (this.state.repositioning = !0),
+                    (this.state.repositioning = !1),
                       console.log(
                         "setPosition, repositioning, ",
                         this.state.repositioning
