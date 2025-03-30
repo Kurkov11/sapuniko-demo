@@ -697,6 +697,14 @@ video {
   top: -50px;
 }
 
+.bottom-\[-140px\] {
+  bottom: -140px;
+}
+
+.-z-10 {
+  z-index: -10;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -1740,10 +1748,6 @@ video {
   padding-bottom: 180px;
 }
 
-.pb-\[250px\] {
-  padding-bottom: 250px;
-}
-
 .pb-\[40px\] {
   padding-bottom: 40px;
 }
@@ -2192,22 +2196,19 @@ video {
 @font-face {
   font-family: "Akshar";
 
-  src: url("https://kurkov11.github.io/sapuniko-demo/wp-content/themes/sapuniko/src/fonts/Akshar.ttf")
-    format("truetype");
+  src: url("../fonts/Akshar.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Alumni Sans";
 
-  src: url("https://kurkov11.github.io/sapuniko-demo/wp-content/themes/sapuniko/src/fonts/AlumniSans.ttf")
-    format("truetype");
+  src: url("../fonts/AlumniSans.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Abel";
 
-  src: url("https://kurkov11.github.io/sapuniko-demo/wp-content/themes/sapuniko/src/fonts/Abel.ttf")
-    format("truetype");
+  src: url("../fonts/Abel.ttf") format("truetype");
 }
 
 :root {
@@ -4253,6 +4254,10 @@ ul.page-numbers {
 
   .desktop\:right-\[120px\] {
     right: 120px;
+  }
+
+  .desktop\:right-\[-140px\] {
+    right: -140px;
   }
 
   .desktop\:mx-\[275px\] {
