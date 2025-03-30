@@ -3207,6 +3207,7 @@
                   key: "handleStopDragging",
                   value: function (A) {
                     (this.state.dragging = !1),
+                      console.log("handleStopDragging"),
                       this.showValidSlide(),
                       this.scrollContainer.classList.remove(
                         "sapuniko-grabbing"
