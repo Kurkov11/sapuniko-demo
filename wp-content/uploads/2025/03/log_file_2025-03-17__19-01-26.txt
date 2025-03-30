@@ -1,0 +1,23 @@
+
+---Upload files---
+Widget file was not uploaded. Error: No file provided.
+
+---Upload files---
+Customizer file was not uploaded. Error: No file provided.
+
+---Upload files---
+Redux file was not uploaded. Error: No file provided.
+
+---Upload files---
+The import files were successfully uploaded!
+Initial max execution time = 1200
+Files info:
+Site URL = http://sapuniko.local
+Data file = /Users/damiankurkowicz/Local Sites/sapuniko/app/public/wp-content/uploads/2025/03/content.xml
+Widget file = not defined!
+Customizer file = not defined!
+Redux files:
+not defined!
+
+---ocdi/after_import---
+
