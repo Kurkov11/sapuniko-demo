@@ -3116,7 +3116,11 @@
                       }),
                       this.slider.children[
                         this.state.globalSlidesIndex
-                      ].classList.add("better-slider-slide-mobile-hover");
+                      ].classList.add("better-slider-slide-mobile-hover"),
+                      console.log(
+                        "adding better-slider-slide-mobile-hover to ",
+                        this.slider.children[this.state.globalSlidesIndex]
+                      );
                   },
                 },
                 {
