@@ -3111,11 +3111,11 @@
                 {
                   key: "setPosition",
                   value: function (A) {
-                    console.log(
-                      "setPosition, repositioning, ",
-                      this.state.repositioning
-                    ),
-                      (this.state.repositioning = !0),
+                    (this.state.repositioning = !0),
+                      console.log(
+                        "setPosition, repositioning, ",
+                        this.state.repositioning
+                      ),
                       (this.state.swipePosition = A),
                       (this.slider.style.transform = "translateX(".concat(
                         A,
@@ -3303,6 +3303,10 @@
                             B.preventDefault();
                         },
                         { passive: !1 }
+                      ),
+                      console.log(
+                        "adding listener transitionend to ",
+                        this.slider
                       ),
                       this.slider.addEventListener(
                         "transitionend",
