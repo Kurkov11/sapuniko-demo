@@ -3111,7 +3111,7 @@
                         A,
                         "px)"
                       )),
-                      this.slider.children.forEach(function (A) {
+                      Array.from(this.slider.children).forEach(function (A) {
                         A.classList.remove("better-slider-slide-mobile-hover");
                       }),
                       this.slider.children[
