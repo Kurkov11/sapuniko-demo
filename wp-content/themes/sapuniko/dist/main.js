@@ -3111,7 +3111,11 @@
                 {
                   key: "setPosition",
                   value: function (A) {
-                    (this.state.repositioning = !0),
+                    console.log(
+                      "setPosition, repositioning, ",
+                      this.state.repositioning
+                    ),
+                      (this.state.repositioning = !0),
                       (this.state.swipePosition = A),
                       (this.slider.style.transform = "translateX(".concat(
                         A,
