@@ -3098,17 +3098,7 @@
                 },
                 {
                   key: "setPosition",
-                  value: (function (A) {
-                    function B(B) {
-                      return A.apply(this, arguments);
-                    }
-                    return (
-                      (B.toString = function () {
-                        return A.toString();
-                      }),
-                      B
-                    );
-                  })(function (A) {
+                  value: function (A) {
                     (this.state.repositioning = !0),
                       (this.state.swipePosition = A),
                       (this.slider.style.transform = "translateX(".concat(
@@ -3116,11 +3106,11 @@
                         "px)"
                       )),
                       console.log(
-                        setPosition,
+                        "setPosition",
                         "repositioning: ",
                         this.state.repositioning
                       );
-                  }),
+                  },
                 },
                 {
                   key: "addDummyContainers",
