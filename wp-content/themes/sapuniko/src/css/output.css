@@ -3713,10 +3713,7 @@ ul.page-numbers {
   }
 }
 
-.sapuniko-gallery-img-hover
-  .sapuniko-better-slider-slide-mobile-hover
-  .sapuniko-slide
-  img {
+.sapuniko-gallery-img-hover .sapuniko-better-slider-slide-mobile-hover img {
   --tw-translate-y: -10px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y))
     rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
@@ -3725,10 +3722,7 @@ ul.page-numbers {
 }
 
 @media (min-width: 960px) {
-  .sapuniko-gallery-img-hover
-    .sapuniko-better-slider-slide-mobile-hover
-    .sapuniko-slide
-    img {
+  .sapuniko-gallery-img-hover .sapuniko-better-slider-slide-mobile-hover img {
     --tw-translate-y: 0px;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y))
       rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
