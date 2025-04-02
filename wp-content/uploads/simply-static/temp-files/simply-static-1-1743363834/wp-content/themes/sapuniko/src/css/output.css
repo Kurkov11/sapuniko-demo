@@ -3682,10 +3682,10 @@ ul.page-numbers {
   will-change: transform;
 }
 
-#sapuniko-mobile-nav-list {
+.sapuniko-mobile-nav-list {
   overflow-y: auto;
 }
-#sapuniko-mobile-nav-list .sapuniko-links-list ul {
+.sapuniko-mobile-nav-list .sapuniko-links-list ul {
   margin-left: auto;
   margin-right: auto;
   display: flex;

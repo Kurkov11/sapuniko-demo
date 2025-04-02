@@ -3684,7 +3684,7 @@ ul.page-numbers {
 #sapuniko-mobile-nav {
   overflow-y: auto;
 }
-#sapuniko-mobile-nav-list .sapuniko-links-list ul {
+.sapuniko-mobile-nav-list .sapuniko-links-list ul {
   margin-left: auto;
   margin-right: auto;
   display: flex;
