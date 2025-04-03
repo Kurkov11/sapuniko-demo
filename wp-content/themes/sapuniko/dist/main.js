@@ -3094,6 +3094,13 @@
                         this.state.swipePosition,
                         "px)"
                       ));
+                    this.slider.children[
+                      this.state.globalSlidesIndex
+                    ].classList.add("better-slider-slide-mobile-hover"),
+                      console.log(
+                        "adding better-slider-slide-mobile-hover to ",
+                        this.slider.children[this.state.globalSlidesIndex]
+                      );
                   },
                 },
                 {
@@ -3871,25 +3878,21 @@
                       this.btn.classList.toggle("expanded"),
                         this.toggled
                           ? ((this.toggled = !1),
-                            gsap
-                              .timeline()
-                              .to(this.textContainer, {
-                                opacity: 0,
-                                duration: 0.5,
-                                y: "-30px",
-                                height: 0,
-                              }),
+                            gsap.timeline().to(this.textContainer, {
+                              opacity: 0,
+                              duration: 0.5,
+                              y: "-30px",
+                              height: 0,
+                            }),
                             gsap
                               .timeline()
                               .to(this.plusLines[1], { rotate: 90 }))
-                          : (gsap
-                              .timeline()
-                              .to(this.textContainer, {
-                                opacity: 1,
-                                duration: 0.5,
-                                y: 0,
-                                height: "".concat(this.paraHeight, "px"),
-                              }),
+                          : (gsap.timeline().to(this.textContainer, {
+                              opacity: 1,
+                              duration: 0.5,
+                              y: 0,
+                              height: "".concat(this.paraHeight, "px"),
+                            }),
                             gsap
                               .timeline()
                               .to(this.plusLines[1], { rotate: 0 }),
