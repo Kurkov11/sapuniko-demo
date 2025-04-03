@@ -4,9 +4,9 @@
 ![Unauthorized Use Prohibited](https://img.shields.io/badge/Unauthorized%20Use-Prohibited-red)  
 
 > ⚠️ **NOTICE:**  
-> This repository is a **demo** for the [Your Theme Name] WordPress theme.  
+> This repository is a **demo** for the Sapuniko WordPress theme.  
 > - You **may not** use, distribute, or claim this code as your own without purchasing a valid license.  
-> - To obtain a license, visit: [Your Theme Purchase Link]  
+> - To obtain a license, visit: [Theme Link Will Appear on Theme Premiere]  
 
 ---
 
