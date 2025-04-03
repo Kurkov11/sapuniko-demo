@@ -3391,6 +3391,13 @@
                           this.state.repositioning
                         ),
                         setTimeout(function () {
+                          this.slider.children[
+                            this.state.globalSlidesIndex
+                          ].classList.add("better-slider-slide-mobile-hover"),
+                            console.log(
+                              "adding better-slider-slide-mobile-hover to ",
+                              this.slider.children[this.state.globalSlidesIndex]
+                            );
                           return B.enableInteraction();
                         }, 0));
                   },
