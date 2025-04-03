@@ -3390,7 +3390,7 @@
                           "repositioning: ",
                           this.state.repositioning
                         ),
-                        setTimeout(function () {
+                        setTimeout(() => {
                           this.slider.children[
                             this.state.globalSlidesIndex
                           ].classList.add("better-slider-slide-mobile-hover"),
