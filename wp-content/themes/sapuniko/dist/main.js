@@ -3092,7 +3092,13 @@
                       (this.slider.style.transform = "translateX(".concat(
                         this.state.swipePosition,
                         "px)"
-                      ));
+                      )),
+                      Array.from(this.slider.children).forEach(function (A) {
+                        A.classList.remove("better-slider-slide-mobile-hover");
+                      }),
+                      this.slider.children[
+                        this.state.globalSlidesIndex
+                      ].classList.add("better-slider-slide-mobile-hover");
                   },
                 },
                 {
