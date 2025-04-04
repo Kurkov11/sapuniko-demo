@@ -3701,7 +3701,7 @@ ul.page-numbers {
   will-change: transform;
 }
 
-#sapuniko-mobile-nav-list .sapuniko-social-links ul {
+#sapuniko-mobile-nav-list .sapuniko-links-list ul {
   margin-left: auto;
   margin-right: auto;
   display: flex;
