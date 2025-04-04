@@ -2564,7 +2564,7 @@ a:visited {
   }
 }
 
-.better-slider-slide-mobile-hover img {
+.sapuniko-gallery-img-hover .better-slider-slide-mobile-hover img {
   --tw-translate-y: -10px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y))
     rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
@@ -2573,7 +2573,7 @@ a:visited {
 }
 
 @media (min-width: 960px) {
-  .better-slider-slide-mobile-hover img {
+  .sapuniko-gallery-img-hover .better-slider-slide-mobile-hover img {
     --tw-translate-y: 0px;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y))
       rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
@@ -2582,7 +2582,9 @@ a:visited {
   }
 }
 
-.better-slider-slide-mobile-hover .sapuniko-portfolio-preview-label {
+.sapuniko-gallery-img-hover
+  .better-slider-slide-mobile-hover
+  .sapuniko-portfolio-preview-label {
   --tw-scale-x: 1;
   --tw-scale-y: 1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y))
@@ -2592,7 +2594,9 @@ a:visited {
 }
 
 @media (min-width: 960px) {
-  .better-slider-slide-mobile-hover .sapuniko-portfolio-preview-label {
+  .sapuniko-gallery-img-hover
+    .better-slider-slide-mobile-hover
+    .sapuniko-portfolio-preview-label {
     --tw-scale-x: 0;
     --tw-scale-y: 0;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y))
