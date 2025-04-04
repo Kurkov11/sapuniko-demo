@@ -3116,12 +3116,6 @@
                         A,
                         "px)"
                       )),
-                      Array.from(this.slider.children).forEach(function (A) {
-                        A.classList.remove("better-slider-slide-mobile-hover");
-                      }),
-                      this.slider.children[
-                        this.state.globalSlidesIndex
-                      ].classList.add("better-slider-slide-mobile-hover"),
                       console.log(
                         "adding better-slider-slide-mobile-hover to ",
                         this.slider.children[this.state.globalSlidesIndex]
@@ -3370,7 +3364,15 @@
                     ),
                       "transform" === A.propertyName &&
                         A.target === this.slider &&
-                        (this.state.isOnDummy &&
+                        (Array.from(this.slider.children).forEach(function (A) {
+                          A.classList.remove(
+                            "better-slider-slide-mobile-hover"
+                          );
+                        }),
+                        this.slider.children[
+                          this.state.globalSlidesIndex
+                        ].classList.add("better-slider-slide-mobile-hover"),
+                        this.state.isOnDummy &&
                           (this.slider.classList.add("disable-transition"),
                           (this.state.mainSlidesIndex = 0),
                           (this.state.globalSlidesIndex =
