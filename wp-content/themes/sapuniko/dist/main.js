@@ -3364,15 +3364,7 @@
                     ),
                       "transform" === A.propertyName &&
                         A.target === this.slider &&
-                        (Array.from(this.slider.children).forEach(function (A) {
-                          A.classList.remove(
-                            "better-slider-slide-mobile-hover"
-                          );
-                        }),
-                        this.slider.children[
-                          this.state.globalSlidesIndex
-                        ].classList.add("better-slider-slide-mobile-hover"),
-                        this.state.isOnDummy &&
+                        (this.state.isOnDummy &&
                           (this.slider.classList.add("disable-transition"),
                           (this.state.mainSlidesIndex = 0),
                           (this.state.globalSlidesIndex =
@@ -3390,6 +3382,14 @@
                           "repositioning: ",
                           this.state.repositioning
                         ),
+                        Array.from(this.slider.children).forEach(function (A) {
+                          A.classList.remove(
+                            "better-slider-slide-mobile-hover"
+                          );
+                        }),
+                        this.slider.children[
+                          this.state.globalSlidesIndex
+                        ].classList.add("better-slider-slide-mobile-hover"),
                         setTimeout(function () {
                           return B.enableInteraction();
                         }, 0));
