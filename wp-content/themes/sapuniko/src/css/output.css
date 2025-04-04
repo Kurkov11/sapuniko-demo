@@ -3701,6 +3701,10 @@ ul.page-numbers {
   will-change: transform;
 }
 
+#sapuniko-mobile-nav-list .sapuniko-links-list {
+  margin-bottom: 50px;
+}
+
 #sapuniko-mobile-nav-list .sapuniko-links-list ul {
   margin-left: auto;
   margin-right: auto;
