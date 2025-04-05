@@ -1816,8 +1816,8 @@ video {
   padding-top: 60px;
 }
 
-.pt-\[70px\] {
-  padding-top: 70px;
+.py-\[70px\] {
+  padding-block: 70px;
 }
 
 .pt-\[80px\] {
