@@ -3373,7 +3373,6 @@ textarea:focus {
   -webkit-background-clip: text;
   background-clip: text;
   transition: all 0.6s;
-  white-space: nowrap;
   font-size: 20px;
 }
 
