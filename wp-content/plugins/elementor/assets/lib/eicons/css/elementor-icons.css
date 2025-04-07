@@ -1,20 +1,11 @@
 @font-face {
   font-family: "eicons";
-  src: url("https://kurkov11.github.io/sapuniko-demo/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.eot?5_35_0");
-  src: url("https://kurkov11.github.io/sapuniko-demo/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.eot?5_35_0#iefix")
-      format("embedded-opentype"),
-    url("https://kurkov11.github.io/sapuniko-demo/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.woff2?5_35_0")
-      format("woff2"),
-    url("https://kurkov11.github.io/sapuniko-demo/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.woff?5_35_0")
-      format("woff"),
-    url("https://kurkov11.github.io/sapuniko-demo/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.ttf?5_35_0")
-      format("truetype"),
-    url("https://kurkov11.github.io/sapuniko-demo/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.svg?5_35_0#eicon")
-      format("svg");
+  src: url("https://sapuniko.com/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.eot?5_35_0");
+  src: url("https://sapuniko.com/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.eot?5_35_0#iefix") format("embedded-opentype"), url("https://sapuniko.com/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.woff2?5_35_0") format("woff2"), url("https://sapuniko.com/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.woff?5_35_0") format("woff"), url("https://sapuniko.com/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.ttf?5_35_0") format("truetype"), url("https://sapuniko.com/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.svg?5_35_0#eicon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
-[class^="eicon"],
+[class^=eicon],
 [class*=" eicon-"] {
   display: inline-block;
   font-family: eicons;
